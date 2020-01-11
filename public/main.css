@@ -1,0 +1,19 @@
+body{
+    text-align: center;
+}
+.button:before{
+    content: "";
+    display:inline-block;
+    width: 1px;
+    height: 100%; 
+    vertical-align: middle;
+}
+.button{
+    background-color:white;
+    display:inline-block;
+    cursor:pointer;
+    font-size:xx-large;
+}
+.button:hover{
+    background-color:gray;
+}

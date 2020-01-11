@@ -1,0 +1,32 @@
+{
+    "imageURL" : "/img/character.png",
+    "frames" : [
+        {
+            "name" : "idle",
+            "rect" : [0,4,35,55]
+        },
+        {
+            "name" : "run-1",
+            "rect" : [70,74,33,57]
+        },
+        {
+            "name" : "run-2",
+            "rect" : [137,74,33,55]
+        },
+        {
+            "name" : "run-3",
+            "rect" : [207,73,33,57]
+        }
+    ],
+    "animations" : [
+        {
+            "name" : "run",
+            "frameLen" : 6,
+            "frames" : [
+                "run-1",
+                "run-2",
+                "run-3"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Record</title>
+    <link rel="stylesheet" type="text/css" href="/main.css"/>
+    
+</head>
+<body>
+    <div class="button" onClick="onClick(0)">Home</div>
+    <div class="button" onClick="onClick(1)">Reset</div>
+    <table style="color:white">
+        <thead>
+            <tr>
+                <td>RANK</td>
+                <td>USERNAME</td>
+                <td>SCORE</td>
+            </tr>
+        </thead>
+        <tbody id="list">
+        </tbody>
+    </table>
+    <script src="background.js"></script>
+    <script>
+        const STORAGE_IDENTIFIER = 'AVOID_BOMB';
+        function onClick(id){
+            switch(id){
+                case 0:
+                    location.href='/';
+                    break;
+                case 1:
+                    reset();
+                    break;
+
+            }
+        }
+        const tbody = document.getElementById('list');
+
+
+        function tableRendering() {
+
+            var list = JSON.parse(localStorage.getItem(STORAGE_IDENTIFIER));
+            var htmlCode;
+            console.log(list);
+            if (list === null) {
+                htmlCode = '<tr><td colspan="3">저장된 데이터가 없습니다.</tr></td>';
+            } else {
+                htmlCode = list.scores.reduce((acc, cur, index) => {
+                return acc + `<tr><td>${index + 1}</td><td>${cur.username}</td><td>${cur.score}</td></tr>`;
+                }, '');
+            }
+
+
+            tbody.innerHTML = htmlCode;
+        }
+        function reset() {
+            localStorage.removeItem(STORAGE_IDENTIFIER);
+            tableRendering();
+        }
+
+
+        createBackground();
+        tableRendering();
+
+    </script>
+</body>
+</html>

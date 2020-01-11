@@ -1,0 +1,55 @@
+{
+    "imageURL" : "/img/bomb.png",
+    "frames" : [
+        {
+            "name" : "idle",
+            "rect" : [0,3,19,19]
+        },
+        {
+            "name" : "explode-1",
+            "rect" : [22,3,19,19]
+        },
+        {
+            "name" : "explode-2",
+            "rect" : [44,4,18,17]
+        },
+        {
+            "name" : "explode-3",
+            "rect" : [65,3,17,18]
+        },
+        {
+            "name" : "explode-4",
+            "rect" : [85,3,17,18]
+        },
+        {
+            "name" : "explode-5",
+            "rect" : [105,3,16,18]
+        },
+        {
+            "name" : "explode-6",
+            "rect" : [124,5,15,15]
+        },
+        {
+            "name" : "explode-7",
+            "rect" : [142,5,14,16]
+        }
+    ],
+    "animations" : [
+        {
+            "name":"explode",
+            "frameLen":0.15,
+            "frames" : [
+                "explode-1",
+                "explode-1",
+                "explode-1",
+                "explode-1",
+                "explode-2",
+                "explode-3",
+                "explode-4",
+                "explode-5",
+                "explode-6",
+                "explode-7"
+            ]
+        }
+    ]
+}
